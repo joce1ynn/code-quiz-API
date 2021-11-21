@@ -13,7 +13,7 @@
 <body>
     <header>
         <button id="view-high-score">View high scores</button>
-        <h1 id="timer">Time:</h1>
+        <h1>Time: <span id="timer"></span></h1>
     </header>
 
     <div class="container">
@@ -22,19 +22,19 @@
             <h2>Coding Quiz Challenge</h2>
             <p>Try to answer the following code-related questions within the time limit.<br />
                 Keep in mind that incorrect answers will penalize your score/time <br />
-                by ten seconds!
+                by twenty seconds!
             </p>
-            <button class="btn" id="start">Start Quiz</button>
+            <button id="start">Start Quiz</button>
         </div>
 
         <!-- quiz box -->
         <div class="quiz-box" id="quiz">
             <!-- question title -->
             <h3 id="question">Question Text</h3>
-                <button class="answer" id="a">A</button><br />
-                <button class="answer" id="b">B</button><br />
-                <button class="answer" id="c">C</button><br />
-                <button class="answer" id="d">D</button><br />
+            <button id="a">A</button><br />
+            <button id="b">B</button><br />
+            <button id="c">C</button><br />
+            <button id="d">D</button><br />
         </div>
 
         <!-- quiz box footer  -->
@@ -61,8 +61,8 @@
             </form>
 
             <div class="buttons">
-                <button class="btn" id="back">Go back</button>
-                <button class="btn" id="clear">Clear high scores</button>
+                <button id="back">Go back</button>
+                <button id="clear">Clear high scores</button>
             </div>
         </div>
     </div>

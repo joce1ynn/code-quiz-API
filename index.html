@@ -17,8 +17,8 @@
     </header>
 
     <div class="container">
-        <!-- info box -->
-        <div class="info-box">
+        <!-- start box -->
+        <div id="start-box">
             <h2>Coding Quiz Challenge</h2>
             <p>Try to answer the following code-related questions within the time limit.<br />
                 Keep in mind that incorrect answers will penalize your score/time <br />
@@ -28,7 +28,7 @@
         </div>
 
         <!-- quiz box -->
-        <div class="quiz-box" id="quiz">
+        <div id="quiz-box">
             <!-- question title -->
             <h3 id="question">Question Text</h3>
             <button id="a">A</button><br />
@@ -43,9 +43,9 @@
         </footer>
 
         <!-- score box -->
-        <div class="score">
+        <div id="score-box">
             <h4>All done!</h4>
-            <p>Your final score is <span id="scores"></span></p>
+            <p>Your final score is <span id="score"></span></p>
             <form>
                 <label for="initials">Enter initials:</label>
                 <input type="text" name="initials" id="initials">
@@ -54,10 +54,10 @@
         </div>
 
         <!-- high scrore -->
-        <div class="high-score">
+        <div id="high-score">
             <form>
-                <label for="score">High scores</label><br />
-                <input type="text" name='score'>
+                <label for="scores">High scores</label><br />
+                <input type="text" name='scores'>
             </form>
 
             <div class="buttons">

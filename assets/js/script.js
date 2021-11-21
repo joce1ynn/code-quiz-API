@@ -1,4 +1,4 @@
-// --------------1. start quiz------------
+// -------------------1. start quiz------------------
 // 1.1 declare variables
 var startBox = document.getElementById("start-box");
 var startButton = document.getElementById("start");
@@ -24,7 +24,7 @@ function startQuiz() {
 // 1.3 Add an event listener to the start button
 startButton.addEventListener("click", startQuiz);
 
-// --------------2. quiz content------------
+// ---------------------2. quiz content-----------------
 // 2.1 creat quiz questions
 const quizData = [
   {
@@ -90,7 +90,7 @@ function loadQuiz() {
   d_text.innerText = currentQuizData.d;
 }
 
-// ---------3. answer quetions---------
+// --------------------3. answer quetions-------------------
 // 3.1 declare variables
 var currentQuiz = 0;
 var score = 0;
@@ -121,7 +121,7 @@ b_text.addEventListener("click", nextQuestion);
 c_text.addEventListener("click", nextQuestion);
 d_text.addEventListener("click", nextQuestion);
 
-// -----------4. show scores-----------
+// -----------------------4. show scores----------------
 //4.1 declare variables
 var scoreBox = document.getElementById("score-box");
 var scoreEl = document.getElementById("score");
@@ -134,17 +134,32 @@ function showScore() {
   scoreEl.textContent = score;
 }
 
-// 4.2 submit initials
+// 4.3 submit initials
 submitEl.addEventListener("click", highScores);
 
-// ---------5. high scores-----------
+// ---------------------5. high scores------------------------
+// 5.1 declare variables
+var highScoreBox = document.getElementById("high-score");
+var viewHighScores = document.getElementById("view-high-score");
+var backEl = document.getElementById("back");
+var clearEl = document.getElementById("clear");
 
+//5.2 show high scores
+function highScores() {
+  startBox.style.display = "none";
+  quizBox.style.display = "none";
+  scoreBox.style.display = "none";
+  highScoreBox.style.display = "inline";
+  //view high score localstorage:
+}
 
-// high score: localStorage
-// function highScores() {
+viewHighScores.addEventListener("click", highScores);
 
-// }
+//5.3 go back to start page
+backEl.addEventListener("click", function () {
+  location.reload();
+});
 
-// goback: a TAG T
+//5.4 clear high scores
 // CLEAR HIGH : DELETE LOCALSTORAGE
-//view high score:
+// clearEl.addEventListener("click", clearScores)

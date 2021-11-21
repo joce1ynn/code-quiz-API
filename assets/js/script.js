@@ -64,7 +64,6 @@ var d_text = document.getElementById("d");
 
 var currentQuiz = 0;
 var score = 0;
-loadQuiz();
 
 function loadQuiz() {
   var currentQuizData = quizData[currentQuiz];
@@ -76,13 +75,47 @@ function loadQuiz() {
   d_text.innerText = currentQuizData.d;
 }
 
-btn.addEventListener("click", function () {
-  if (answerEls === quizData[currentQuiz].correct) {
-    score--;
-  }
-  currentQuiz++;
+// start quiz
+var startButton = document.getElementById("start");
+startButton.addEventListener("click", startQuiz);
+var result = document.getElementById("result");
 
+// css display:none;
+
+function startQuiz() {
+  loadQuiz();
+  // Timer
+}
+
+// answer quetions
+function nextQuestion() {
+  //   and result from the last one to check if the answer is correct
+  if (quizData[currentQuiz].correct === this.id) {
+    result.textContent = "Correct!";
+    score += 10;
+  } else {
+    result.textContent = "Wrong!";
+    // timer -=5
+  }
+  //show the next question
+  currentQuiz++;
   if (currentQuiz < quizData.length) {
     loadQuiz();
+  } else {
+    showScore();
   }
-});
+}
+
+a_text.addEventListener("click", nextQuestion);
+b_text.addEventListener("click", nextQuestion);
+c_text.addEventListener("click", nextQuestion);
+d_text.addEventListener("click", nextQuestion);
+
+function showScore() {
+    // css display
+}
+
+// high score: localStorage
+// goback: a TAG T
+// CLEAR HIGH : DELETE LOCALSTORAGE
+//view high score: 

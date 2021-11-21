@@ -12,32 +12,60 @@
 
 <body>
     <header>
-        <h1>View high scores</h1>
-        <h2>Time:</h2>
+        <button id="view-high-score">View high scores</button>
+        <h1 id="timer">Time:</h1>
     </header>
 
-    <div>
-        <h2>Coding Quiz Challenge</h2>
-        <p>Try to answer the following code-related questions within the time limit.
-            Keep in mind that incorrect answers will penalize your score/time by ten seconds!
-        </p>
+    <div class="container">
+        <!-- info box -->
+        <div class="info-box">
+            <h2>Coding Quiz Challenge</h2>
+            <p>Try to answer the following code-related questions within the time limit.<br />
+                Keep in mind that incorrect answers will penalize your score/time <br />
+                by ten seconds!
+            </p>
+            <button class="btn" id="start">Start Quiz</button>
+        </div>
 
-        <button>Start Quiz</button>
-    </div>
+        <!-- quiz box -->
+        <div class="quiz-box" id="quiz">
+            <!-- question title -->
+            <h3 id="question">Question Text</h3>
+                <button class="answer" id="a">A</button><br />
+                <button class="answer" id="b">B</button><br />
+                <button class="answer" id="c">C</button><br />
+                <button class="answer" id="d">D</button><br />
+        </div>
 
-    <div>
-        <h3>All done!</h3>
-        <p>Your final score is .</p>
-        <p>Enter initials:</p>
-        <button>Submit</button>
-    </div>
+        <!-- quiz box footer  -->
+        <footer>
+            <p>result</p>
+        </footer>
 
-    <div>
-        <h4>High scores</h4>
-        <button>Go back</button>
-        <button>Clear high scores</button>
+        <!-- score box -->
+        <div class="score">
+            <h4>All done!</h4>
+            <p>Your final score is </p>
+            <form>
+                <label for="initials">Enter initials:</label>
+                <input type="text" name="initials" id="initials">
+            </form>
+            <button id="submit">Submit</button>
+        </div>
+
+        <!-- high scrore -->
+        <div class="high-score">
+            <form>
+                <label for="score">High scores</label><br />
+                <input type="text" name='score'>
+            </form>
+
+            <div class="buttons">
+                <button class="btn" id="back">Go back</button>
+                <button class="btn" id="clear">Clear high scores</button>
+            </div>
+        </div>
     </div>
-    Coding quiz
 
     <script src="./assets/js/script.js"></script>
 </body>

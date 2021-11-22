@@ -109,17 +109,19 @@ footer {
   text-align: left;
 }
 
-#score-box h4{
+#score-box h4 {
   margin: 25px;
   font-size: 30px;
 }
 
-#score-box p, #score-box form, #score-box button {
+#score-box p,
+#score-box form,
+#score-box button {
   margin: 25px;
   font-size: 24px;
 }
 
-#score  {
+#score {
   font-weight: bolder;
   color: rgb(22, 135, 201);
 }
@@ -130,11 +132,25 @@ footer {
   padding: 5px;
   text-align: center;
   font-size: 20px;
-
-
 }
 
 /* high score box  */
 #high-score {
   display: none;
+  text-align: left;
+}
+
+#high-score h5 {
+  margin: 25px;
+  font-size: 30px;
+}
+
+#high-score li {
+  font-size: 20px;
+  font-weight: bold;
+  background-color: rgb(166, 236, 240);
+  border-radius: 5px;
+  padding: 8px;
+  width: 60%;
+  margin: 20px 40px ;
 }

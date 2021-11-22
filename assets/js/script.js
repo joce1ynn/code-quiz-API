@@ -24,6 +24,7 @@ function startQuiz() {
 // 1.3 Add an event listener to the start button
 startButton.addEventListener("click", startQuiz);
 
+
 // ---------------------2. quiz content-----------------
 // 2.1 creat quiz questions
 const quizData = [
@@ -90,6 +91,7 @@ function loadQuiz() {
   d_text.innerText = currentQuizData.d;
 }
 
+
 // --------------------3. answer quetions-------------------
 // 3.1 declare variables
 var currentQuiz = 0;
@@ -121,6 +123,7 @@ b_text.addEventListener("click", nextQuestion);
 c_text.addEventListener("click", nextQuestion);
 d_text.addEventListener("click", nextQuestion);
 
+
 // -----------------------4. show scores----------------
 //4.1 declare variables
 var scoreBox = document.getElementById("score-box");
@@ -137,26 +140,34 @@ function showScore() {
 
 // 4.3 submit initials
 submitEl.addEventListener("click", function submitInitials() {
+
   // initials must be submitted
   if (initialEl.value === "") {
     window.alert("Initials need to be submitted!");
   } else {
+
     //save initials and scores
     var highScore = {
       initial: initialEl.value,
       score: score,
     };
 
-    localStorage.setItem("savedScores", JSON.stringify(highScore));
+    var highScoreData = JSON.parse(localStorage.getItem("highScoreData")) || [];
+    highScoreData.push(highScore);
+
+    localStorage.setItem("highScoreData", JSON.stringify(highScoreData));
+
     //show high score box;
     showHighScores();
   }
 });
 
+
 // ---------------------5. high scores------------------------
 // 5.1 declare variables
+var viewScorePage = document.getElementById("view-high-score");
 var highScoreBox = document.getElementById("high-score");
-var viewHighScores = document.getElementById("view-high-score");
+var highScoreEL = document.getElementById("list-scores");
 var backEl = document.getElementById("back");
 var clearEl = document.getElementById("clear");
 
@@ -166,17 +177,32 @@ function showHighScores() {
   quizBox.style.display = "none";
   scoreBox.style.display = "none";
   highScoreBox.style.display = "inline";
+  resultEl.style.display = "none";
 
-  //view high score localstorage:
+  //load saved scores
+  highScoreEL.innerHTML = "";
 
-  viewHighScores.addEventListener("click", showHighScores);
+  var savedScores = JSON.parse(localStorage.getItem("highScoreData")) || [];
 
-  //5.3 go back to start page
-  backEl.addEventListener("click", function () {
-    location.reload();
-  });
+  for (var i = 0; i < savedScores.length; i++) {
+    var highScoreList = document.createElement("li");
+    highScoreList.textContent =
+      savedScores[i].initial + " - " + savedScores[i].score;
+
+    highScoreEL.appendChild(highScoreList);
+  }
 }
 
-//5.4 clear high scores
-// CLEAR HIGH : DELETE LOCALSTORAGE
-// clearEl.addEventListener("click", clearScores)
+//5.3 view high scores page
+viewScorePage.addEventListener("click", showHighScores);
+
+//5.4 go back to start page
+backEl.addEventListener("click", function () {
+  location.reload();
+});
+
+//5.5 clear high scores
+clearEl.addEventListener("click", function () {
+  localStorage.clear();
+  showHighScores();
+});

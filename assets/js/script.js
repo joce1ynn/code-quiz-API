@@ -64,10 +64,10 @@ const quizData = [
   },
   {
     question: "Inside which HTML element do we put the JavaScript?",
-    a: "<javascript",
-    b: "scripting",
-    c: "script",
-    d: "js",
+    a: "<javascript>",
+    b: "<scripting>",
+    c: "<script>",
+    d: "<js>",
     correct: "c",
   },
 ];
@@ -82,7 +82,7 @@ var d_text = document.getElementById("d");
 
 function loadQuiz() {
   startBox.style.display = "none";
-  quizBox.style.display = "inline";
+  quizBox.style.display = "block";
   var currentQuizData = quizData[currentQuiz];
   questionEl.innerText = currentQuizData.question;
   a_text.innerText = currentQuizData.a;
@@ -134,7 +134,7 @@ var submitEl = document.getElementById("submit");
 // 4.2 showing score page
 function showScore() {
   quizBox.style.display = "none";
-  scoreBox.style.display = "inline";
+  scoreBox.style.display = "block";
   scoreEl.textContent = score;
 }
 
@@ -176,7 +176,7 @@ function showHighScores() {
   startBox.style.display = "none";
   quizBox.style.display = "none";
   scoreBox.style.display = "none";
-  highScoreBox.style.display = "inline";
+  highScoreBox.style.display = "block";
   resultEl.style.display = "none";
 
   //load saved scores

@@ -6,6 +6,7 @@
 
 body {
   font-family: sans-serif;
+  background-color: rgba(245, 245, 245, 0.863);
 }
 
 /* header */
@@ -16,7 +17,7 @@ header {
 #view-high-score {
   color: #18acd1;
   border: none;
-  background-color: white;
+  background-color: rgba(245, 245, 245, 0.863);
   font-size: 18px;
   float: left;
 }
@@ -47,32 +48,62 @@ header h1 {
 }
 
 .box {
+  background-color: hsla(0, 0%, 100%, 0.945);
   border-radius: 5px;
   border-width: 1px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
   color: hsl(206, 17%, 28%);
   font-size: 20px;
-  margin: 100px auto auto auto;
-  max-width: 800px;
+  margin: 100px auto;
+  width: 60%;
   padding: 30px 40px;
-  position: relative;
 }
 
 /* start box */
-.box h2 {
-  margin: 50px;
+#start-box h2 {
+  margin: 40px;
+  font-size: 30px;
 }
 
-.box p {
+#start-box p {
   margin: 30px;
 }
 
 /* quiz box */
 #quiz-box {
   display: none;
+  text-align: left;
+}
+
+#question {
+  margin: 25px;
+  font-size: 27px;
+}
+
+#a,
+#b,
+#c,
+#d {
+  text-align: left;
+  font-size: 20px;
+  color: white;
+  background-color: #1f9abf;
+  border: none;
+  border-radius: 5px;
+  line-height: 30px;
+  margin: 5px 25px;
+  padding: 5px 20px;
+  width: 60%;
+}
+
+footer {
+  font-size: 20px;
+  font-style: italic;
+  margin: 30px 25px;
 }
 
 /* score box  */
+
 #score-box {
   display: none;
 }

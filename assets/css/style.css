@@ -1,11 +1,28 @@
-#quiz-box{
-    display: none;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-#score-box{
-    display: none;
+header {
+  padding: 20px;
 }
 
-#high-score{
-    display: none;
+header h1 {
+  font-size: 18px;
+  font-weight: lighter;
+  display: flex;
+  float: right;
+}
+
+#quiz-box {
+  display: none;
+}
+
+#score-box {
+  display: none;
+}
+
+#high-score {
+  display: none;
 }

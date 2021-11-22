@@ -11,7 +11,7 @@ function startQuiz() {
   loadQuiz();
   var timeInterval = setInterval(function () {
     if (timeLeft > 0) {
-      timerEl.textContent = timeLeft + "s";
+      timerEl.textContent = ": " + timeLeft + "s";
       timeLeft--;
     } else {
       timerEl.textContent = "";
@@ -125,6 +125,7 @@ d_text.addEventListener("click", nextQuestion);
 //4.1 declare variables
 var scoreBox = document.getElementById("score-box");
 var scoreEl = document.getElementById("score");
+var initialEl = document.getElementById("initials");
 var submitEl = document.getElementById("submit");
 
 // 4.2 showing score page
@@ -135,7 +136,22 @@ function showScore() {
 }
 
 // 4.3 submit initials
-submitEl.addEventListener("click", highScores);
+submitEl.addEventListener("click", function submitInitials() {
+  // initials must be submitted
+  if (initialEl.value === "") {
+    window.alert("Initials need to be submitted!");
+  } else {
+    //save initials and scores
+    var highScore = {
+      initial: initialEl.value,
+      score: score,
+    };
+
+    localStorage.setItem("savedScores", JSON.stringify(highScore));
+    //show high score box;
+    showHighScores();
+  }
+});
 
 // ---------------------5. high scores------------------------
 // 5.1 declare variables
@@ -145,20 +161,21 @@ var backEl = document.getElementById("back");
 var clearEl = document.getElementById("clear");
 
 //5.2 show high scores
-function highScores() {
+function showHighScores() {
   startBox.style.display = "none";
   quizBox.style.display = "none";
   scoreBox.style.display = "none";
   highScoreBox.style.display = "inline";
+
   //view high score localstorage:
+
+  viewHighScores.addEventListener("click", showHighScores);
+
+  //5.3 go back to start page
+  backEl.addEventListener("click", function () {
+    location.reload();
+  });
 }
-
-viewHighScores.addEventListener("click", highScores);
-
-//5.3 go back to start page
-backEl.addEventListener("click", function () {
-  location.reload();
-});
 
 //5.4 clear high scores
 // CLEAR HIGH : DELETE LOCALSTORAGE

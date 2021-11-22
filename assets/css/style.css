@@ -106,6 +106,32 @@ footer {
 
 #score-box {
   display: none;
+  text-align: left;
+}
+
+#score-box h4{
+  margin: 25px;
+  font-size: 30px;
+}
+
+#score-box p, #score-box form, #score-box button {
+  margin: 25px;
+  font-size: 24px;
+}
+
+#score  {
+  font-weight: bolder;
+  color: rgb(22, 135, 201);
+}
+
+#initials {
+  background-color: rgb(201, 232, 248);
+  border-radius: 5px;
+  padding: 5px;
+  text-align: center;
+  font-size: 20px;
+
+
 }
 
 /* high score box  */

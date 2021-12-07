@@ -9,7 +9,7 @@ I created this coding quiz app by using JS, HTML and CSS. JavaScript can be frus
 * JavaScript
 
 ## Website
-https://joce1ynn.github.io/web-APIs-code-quiz/
+https://joce1ynn.github.io/code-quiz-API/
 
 ## Website Screenshot
 ![Screenshot](/assets/images/Quiz-1.png)
